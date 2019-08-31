@@ -103,6 +103,7 @@ const createDom = () => {
     title1.textContent = 'THINGS TO DO';
 
     let listContainer = document.createElement('div');
+    listContainer.id = 'listContainer';
 
     projectsContainer.appendChild(title1);
     projectsContainer.appendChild(listContainer);
@@ -154,6 +155,8 @@ const createDom = () => {
 
     projectsBigContainer.appendChild(newProjectFormContainer);
     projectsListContainer.appendChild(projectsBigContainer);
+    projectsListContainer.appendChild(projectsListDiv);
+
 
     smallContainer.appendChild(projectsContainer);
     smallContainer.appendChild(projectsListContainer);
