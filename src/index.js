@@ -1,13 +1,16 @@
+import {
+    createDom
+} from './createDom.js';
+
 
 import './styles/reset.css';
 import css from './styles/style.css';
-  function component() {
-    const element = document.createElement('div');
+ 
+    
 
 
-    element.textContent = 'bbbbb';
+    
 
-    return element;
-  }
+const content = document.getElementById('content');
 
-  document.body.appendChild(component());
+  content.appendChild(createDom());
