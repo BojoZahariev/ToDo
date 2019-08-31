@@ -157,7 +157,7 @@ const engine = () => {
         });
 
         //delete button
-        var btn = document.createElement('p');
+        let btn = document.createElement('p');
         btn.classList.add('btn-delete');
         btn.textContent = 'Delete Project';
         item.appendChild(btn);
@@ -345,7 +345,6 @@ const engine = () => {
         ProjectToDos,
         listMakerProjects,
         listMaker,
-        btn,
         redactingFunction,
         checked,
         deleteList,

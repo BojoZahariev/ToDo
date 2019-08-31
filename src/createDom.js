@@ -92,6 +92,7 @@ const createDom = () => {
     //main content
     //left and right big container
     let smallContainer = document.createElement('div');
+    smallContainer.id = 'small-container';
 
     //Left
     //big container
