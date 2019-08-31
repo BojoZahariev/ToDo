@@ -1,10 +1,11 @@
-import _ from 'lodash';
 
+import './styles/reset.css';
+import css from './styles/style.css';
   function component() {
     const element = document.createElement('div');
 
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.textContent = 'bbbbb';
 
     return element;
   }
