@@ -53,7 +53,7 @@ const engine = () => {
     //Submit new project
     submitNewProject.addEventListener('click', function (e) {
         e.preventDefault();
-        if (item1NewProject.value !== '') {
+        if (item1NewProject.checkValidity()) {
             let projectMain = new Project(item1NewProject.value, 'project', projectsListDiv.id, itemsArray.length);
             itemsArray.push(projectMain);
 
@@ -70,7 +70,7 @@ const engine = () => {
     //Submit todo
     submitButton.addEventListener('click', function (e) {
         e.preventDefault();
-        if (input1.value !== '') {
+        if (input1.checkValidity()) {
             if (input2.value === 'Details') {
                 input2.value = '';
             }
@@ -192,6 +192,11 @@ const engine = () => {
             list.appendChild(item);
         }
 
+        //for the animation effect
+	    setTimeout(function () {
+		  list.classList.add('show');
+	    }, 150);
+
         let child = list.querySelectorAll('p');
         child[0].textContent = text.title;
         child[1].textContent = text.description;
@@ -210,7 +215,7 @@ const engine = () => {
         }
         child[3].textContent = text.priority;
         if (text.priority === 'Can Wait') {
-            child[3].style.color = '#A2E3C4';
+            child[3].style.color = '#81B29A';
         } else if (text.priority === 'ASAP') {
             child[3].style.color = '#CC5803';
         } else {

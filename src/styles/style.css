@@ -19,44 +19,47 @@ input {
 	display: block;
 }
 
-#item1 {
+#item1,
+#item2 {
 	text-transform: uppercase;
 	font-size: 18px;
 	font-weight: 700;
 	width: 300px;
 	margin-right: 15px;
 	outline: none;
-	border: none;
 	background-color: #f1faee;
 	padding: 10px;
 	border-radius: 7px;
 	color: #01161e;
 	font-family: 'Lato', sans-serif;
-}
-
-#item2 {
-	text-transform: uppercase;
-	font-size: 18px;
-	width: 300px;
-	margin-right: 20px;
-	outline: none;
-	border: none;
-	background-color: #f1faee;
-	padding: 12px;
-	border-radius: 5px;
-	color: #01161e;
-	font-weight: 100;
-	font-family: 'Lato', sans-serif;
+	border: 1px solid #c4c4c4;
+	box-shadow: inset 0 3px 6px #0000001a;
 }
 
 #item3,
 #item1NewProject {
-	font-size: 18px;
-	border: none;
+	color: #01161e;
+	font-size: 20px;
 	outline: none;
 	background-color: #f1faee;
 	padding: 10px;
 	border-radius: 5px;
+	border: 1px solid #c4c4c4;
+	box-shadow: inset 0 3px 6px #0000001a;
+}
+
+#item3 {
+	background: #f1faee url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50%
+		no-repeat;
+}
+
+#item3::-webkit-inner-spin-button {
+	display: none;
+}
+
+#item3::-webkit-calendar-picker-indicator {
+	opacity: 0;
+	width: 20px;
 }
 
 /*Radio Buttons*/
@@ -99,27 +102,21 @@ input {
 }
 
 /* On mouse-over, add a grey background color */
-.radioContainer:hover input~.checkmark {
+.radioContainer:hover input ~ .checkmark {
 	background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-#radio1:checked~.checkmark {
+#radio1:checked ~ .checkmark {
 	background-color: #a2e3c4;
 }
 
-#radio2:checked~.checkmark {
+#radio2:checked ~ .checkmark {
 	background-color: #cc5803;
 }
 
-#radio3:checked~.checkmark {
+#radio3:checked ~ .checkmark {
 	background-color: #e63946;
-}
-
-#submit {
-	padding: 10px;
-	border: 1px solid #222;
-	cursor: pointer;
 }
 
 #small-container {
@@ -144,7 +141,7 @@ input {
 	width: 100%;
 	height: 70vh;
 	overflow: auto;
-	background-color: #aec3b0;
+	background-color: #f2cc8f;
 	padding: 20px 0px;
 	border-radius: 10px;
 }
@@ -207,6 +204,17 @@ h1 {
 	justify-content: space-between;
 	color: #1d3557;
 	font-size: 18px;
+	perspective: 100px;
+	opacity: 0;
+	transform: rotateX(-90deg);
+	transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+}
+
+/*flip animation*/
+.show {
+	opacity: 1;
+	transform: none;
+	transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
 }
 
 .item {
@@ -214,6 +222,10 @@ h1 {
 	align-self: center;
 	width: 30%;
 	position: relative;
+}
+
+.item:first-child {
+	font-weight: 900;
 }
 
 #newProjectFormContainer {
@@ -250,10 +262,15 @@ h1 {
 	border-radius: 5px;
 	border: 1px solid #598392;
 	text-align: center;
+	user-select: none;
 }
 
 #submit {
 	padding: 10px;
+}
+
+#submit:active {
+	border: 1px solid #222;
 }
 
 .btn-delete-todo:hover,
@@ -290,6 +307,5 @@ h1 {
 
 	#item3 {
 		font-size: 15px;
-
 	}
 }

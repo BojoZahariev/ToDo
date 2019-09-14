@@ -7,6 +7,7 @@ const createDom = () => {
     inputTitle.id = 'item1';
     inputTitle.type = 'text';
     inputTitle.placeholder = "Title";
+    inputTitle.required = true;
     formDiv.appendChild(inputTitle);
 
     let inputDetails = document.createElement('textarea');
@@ -139,6 +140,7 @@ const createDom = () => {
     item1NewProject.id = 'item1NewProject';
     item1NewProject.type = 'text';
     item1NewProject.placeholder = 'Title';
+    item1NewProject.required = true;
 
     let submitNewProject = document.createElement('p');
     submitNewProject.id = 'submitNewProject';
