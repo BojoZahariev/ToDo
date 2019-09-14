@@ -257,6 +257,34 @@ const engine = () => {
             });
         }
 
+        //change date
+	    var btnRech = document.createElement('p');
+	    btnRech.classList.add('btn-delete-todo');
+	    btnRech.textContent = 'Rechedual';
+	    list.appendChild(btnRech);
+
+	    btnRech.addEventListener('click', () => {
+		  const dateRed = document.createElement('input');
+		  dateRed.id = 'dateRed';
+		  dateRed.type = 'date';
+		    if (btnRech.textContent === 'Rechedual') {
+			child[2].appendChild(dateRed);
+
+			btnRech.textContent = 'Save Changes';
+		    } else if (btnRech.textContent === 'Save Changes') {
+			  redactingFunctionDate(text.title, text.id, document.getElementById('dateRed').value);
+
+			if (document.getElementById('dateRed').value === input3.value) {
+				child[2].textContent = 'Due: Today';
+			} else {
+				child[2].textContent = 'Due: ' + document.getElementById('dateRed').value;
+			}
+			btnRech.textContent = 'Rechedual';
+			dateRed.remove();
+		}
+	});
+
+
         //delete button
         let btn = document.createElement('p');
         btn.classList.add('btn-delete-todo');
@@ -277,7 +305,16 @@ const engine = () => {
                 localStorage.setItem('items', JSON.stringify(itemsArray));
             }
         }
-    }
+    };
+
+    const redactingFunctionDate = (listTitle, identification, content) => {
+        for (let i = 0; i < itemsArray.length; i++) {
+            if (itemsArray[i].title === listTitle && itemsArray[i].id === identification) {
+                itemsArray[i].dueDate = content;
+                localStorage.setItem('items', JSON.stringify(itemsArray));
+            }
+        }
+    };
 
     //Checks which button is checked
     const checked = () => {
