@@ -2,4 +2,4 @@
 
 ## Webpack, JS, HTML, CSS
 
-![Image of Todo](https://i.ibb.co/z7FZ5nN/todo-capture.png)
+![Image of Todo](https://i.ibb.co/fHrT1zX/Capture-Todo.png)
